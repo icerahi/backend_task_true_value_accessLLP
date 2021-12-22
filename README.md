@@ -50,10 +50,10 @@ Response with HTTP status code 200 on success
 
 | Query Parameter | Type     | Example                |
 | :-------- | :------- | :------------------------- |
-| `page` | `integer` | /user/?page=3 ||
-| `limit` | `integer` | /user/?limit=10 | default is 5|
-| `name` | `string` | /user/?name=james | |
-| `sort` | `string` | /user/?sort=-age | |
+| `page` | `integer` | /api/users/?page=3 ||
+| `limit` | `integer` | /api//users/?limit=10 | default is 5|
+| `name` | `string` | /api/users/?name=james | |
+| `sort` | `string` | /api/users/?sort=-age | |
 
 
 #### Create a new user
@@ -85,12 +85,12 @@ example:
 #### Get user
 
 ```http
-  GET /api/users/<id>
+  GET /api/users/<id>/
 ```
 
 | Path Parameter | Type     | Example                       |status|
 | :-------- | :------- | :-------------------------------- |---|
-| `id`      | `int` | /api/user/1  |200 on success|
+| `id`      | `int` | /api/users/1  |200 on success|
 
 #### Update user
 
@@ -106,7 +106,7 @@ example:
 #### Delete a user
 
 ```http
- DELETE /api/users/{id}
+ DELETE /api/users/{id}/
 ```
 
 | Path Parameter | Type     | status|
