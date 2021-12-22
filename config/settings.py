@@ -43,6 +43,7 @@ INSTALLED_APPS = [
      'rest_framework',
      'import_export',
      'django_filters',
+     'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+             'libraries' : {
+                'staticfiles': 'django.templatetags.static', 
+            }
         },
     },
 ]
@@ -122,7 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFILSEDIRS=[
+    BASE_DIR/'static-root'
+]
+STATIC_ROOT=BASE_DIR/'static-root'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -137,7 +144,7 @@ REST_FRAMEWORK = {
     'ORDERING_PARAM':'sort',
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
-    )
-
-    
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+   
 }
