@@ -85,7 +85,7 @@ example:
 #### Get user
 
 ```http
-  GET /api/users/<id>/
+  GET /api/users/<id>
 ```
 
 | Path Parameter | Type     | Example                       |status|
@@ -106,7 +106,7 @@ example:
 #### Delete a user
 
 ```http
- DELETE /api/users/{id}/
+ DELETE /api/users/{id}
 ```
 
 | Path Parameter | Type     | status|
